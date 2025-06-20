@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class StartScreen extends StatelessWidget {
-  const StartScreen({super.key});
+  final VoidCallback
+  onStartQuiz; //Callback yg akan dipanggil saat tombol ditekan
+
+  const StartScreen({super.key, required this.onStartQuiz});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +24,7 @@ class StartScreen extends StatelessWidget {
           ),
           SizedBox(height: 20),
           OutlinedButton.icon(
-            onPressed: () {},
+            onPressed: onStartQuiz,
             style: OutlinedButton.styleFrom(foregroundColor: Colors.white),
             icon: Icon(Icons.arrow_right_alt),
             label: Text("Start Quiz"),
